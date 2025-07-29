@@ -28,7 +28,7 @@ export default function LandingPage() {
 
      
 
-      {/* Optional: show the picked date */}
+ 
       {date && (
         <p className="mt-4 text-sm text-gray-600">
           You picked: {date.toLocaleDateString()}

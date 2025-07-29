@@ -13,6 +13,7 @@ export default function LivestockPage() {
     type: '',
     price: '',
     quantity: '',
+    farmerId:'',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

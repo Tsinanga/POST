@@ -11,6 +11,7 @@ export default function SettingsPage() {
   const [email, setEmail] = useState(initialEmail);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [isDelete, setIsDelete] = useState(false);
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,6 +23,16 @@ export default function SettingsPage() {
     setEmail(initialEmail);
     setPassword('');
     setConfirmPassword('');
+  };
+
+  const handleDeleteAccount = () => {
+    // Here you could make an API call or show a confirmation dialog
+    setUsername('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
+    setIsDelete(true);
+    alert('Account deleted!');
   };
 
   return (
@@ -86,9 +97,17 @@ export default function SettingsPage() {
         <button
           type="button"
           onClick={handleDiscard}
-          className="w-full bg-yellow-600 text-white py-2 px-4 rounded hover:bg-red-600"
+          className="w-full bg-yellow-600 text-white py-2 px-4 rounded hover:bg-yellow-700"
         >
           Discard Changes
+        </button>
+
+        <button
+          type="button"
+          onClick={handleDeleteAccount}
+          className="w-full bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700"
+        >
+          Delete Account
         </button>
       </form>
     </main>
